@@ -1,0 +1,189 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 65px;
+    text-align: center;
+    color: #5f9ea0;
+    padding-bottom: 5px;
+    padding-top: 10%;
+}
+
+.button {
+    display: flex;
+    margin: 25px auto;
+    font-size: 20px;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+
+#redbutton {
+    display: flex;
+    background-color: red;
+    color: white;
+    margin: 25px auto;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 100px;
+    border: 1px solid white;
+}
+
+#redbutton:hover {
+    background-color: #cb1a0d;
+    cursor: pointer;
+}
+
+/* Le style pour avoir une maison (je n'ai pas crée la maison moi-même j'ai pris un design déjà existant
+je voulais de base afficher les maisons en grille de 4 maisons par colonnes mais je n'y arrive pas, du coup elles s'affichent les unes en dessous des autres*/
+
+.container {
+    height: 450px;
+    width: 400px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.container * {
+    position: absolute;
+}
+
+.house {
+    top: 50%;
+    left: 75px;
+    height: 200px;
+    width: 260px;
+    background: #FFF;
+    border: 3px solid #8a6e5c;
+}
+
+.house::before {
+    content: '';
+    position: absolute;
+    top: -95px;
+    left: 33px;
+    height: 183px;
+    width: 183.5px;
+    background: white;
+    transform: rotate(45deg);
+    border-top: 10px solid #8a6e5c;
+    border-left: 10px solid #8a6e5c;
+    z-index: 2
+}
+
+.house::after {
+    content: '';
+    position: absolute;
+    top: -70px;
+    left: 15px;
+    height: 70px;
+    width: 30px;
+    background: #8a6e5c;
+    z-index: 1;
+    border-top: 7px solid rgba(0, 0, 0, .3);
+}
+
+.window {
+    top: 35px;
+    left: 25px;
+    height: 80px;
+    width: 70px;
+    ;
+    z-index: 3;
+    border-top: 7px solid #8a6e5c;
+}
+
+.window::before,
+.window::after {
+    content: '';
+    position: absolute;
+    background: silver;
+}
+
+.window::before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 1px;
+}
+
+.window::after {
+    top: 50%;
+    height: 1px;
+    width: 100%;
+}
+
+.door {
+    top: 70px;
+    left: 150px;
+    height: 130px;
+    width: 70px;
+    background: #8a6e5c;
+    z-index: 3;
+}
+
+.door::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    background: #96ebff;
+}
+
+.flower {
+    bottom: 0;
+    height: 60px;
+    width: 60px;
+    background: green;
+    z-index: 4;
+    border-radius: 30px 30px 3px 0;
+    box-shadow: 1px -1px 7px rgba(0, 0, 0, .5);
+}
+
+.flower::before {
+    content: '';
+    position: absolute;
+    bottom: -0px;
+    left: 40px;
+    height: 40px;
+    width: 50px;
+    background: green;
+    border-radius: 50% 50% 0 0;
+}
+
+.flower::after {
+    content: '';
+    position: absolute;
+    bottom: -0px;
+    left: 80px;
+    height: 40px;
+    width: 50px;
+    background: green;
+    border-radius: 50% 50% 15% 0;
+}
+
+/*Pour rendre la maison transparente au hover*/
+.house:hover {
+    opacity: 0.2;
+}
+
+/*Classes qui servent quand il n'y a aucune maison*/
+.blackhole {
+    background-image: url(blackhole.jpeg);
+    background-size: cover;
+    color: white;
+}
+
+.pasMaison {
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
